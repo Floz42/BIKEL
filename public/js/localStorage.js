@@ -13,12 +13,10 @@ class LocalStorage {
     };
 
     setInfos() {
-        $('#confirm_location').on('click', function() {
             this.name = localStorage.getItem('name');
             this.last_name = localStorage.getItem('lastname');
             localStorage.setItem('name', $('#name').val());
             localStorage.setItem('lastname', $('#last_name').val());
-        });
     };
 };
 

@@ -3,6 +3,8 @@
 $(function(){
     
     const storage = new LocalStorage();
+    const canvas = new Canvas(); 
+    const reservation = new Reservation();
     
  
 // REDUCE OR INCREASE THE NAVBAR ON SCROLL
