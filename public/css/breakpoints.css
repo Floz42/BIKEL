@@ -1,0 +1,107 @@
+@media all and (max-width: 769px) {
+    #menu {
+        position: fixed;
+    }
+    header, #page {
+        width: 100%;
+    }
+    #carousel, #slider, .slides, .one_slide {
+        width: 100%;
+    }
+    .one_slide figure img {
+        width: 100%;
+        margin: 0;
+    }
+    .text_slider p {
+        font-size: 15px;
+    }
+    .dot { 
+        font-size: 0.3em;
+    }
+    #map {
+        overflow: hidden;
+    }
+    #reservation {
+        padding: 0.1em;
+    } 
+    .reservation_text {
+        font-size: 0.4em; 
+        text-align: center;
+        line-height: 2em;
+        margin: 0;
+    }
+    #reservation {
+        padding: 0;
+    }
+    #cancel_reservation {
+        font-size: 0.4em;
+        padding: 0.5em;
+    }
+    .minutes_timer {
+        font-size: 0.8em;
+    }
+    footer {
+        font-size: 0.4em; 
+    }
+}
+
+@media all and (max-width: 425px) {
+    #page {
+        margin: 0; 
+        border: 0;
+    }
+    #menu {
+        padding: 0;
+    }
+    #menu img {
+        width: 60px; 
+        height: auto;
+    }
+    .title_menu {
+        font-size: 1em;
+    }
+    .slogan_menu {
+        font-size: 0.5em;
+    }
+    #slider {
+        margin-top: 100px;
+    }
+    .one_slide figure figcaption {
+        border-radius: 25px;
+    }
+    .one_slide figure img {
+        width: 100%;
+        margin: 0;
+    }
+    .one_slide figure figcaption .text_slider h1 {
+        width: 100%;
+        font-size: 20px;
+    }
+    .text_slider p {
+        font-size: 15px;
+    }
+    .no-padding {
+        padding: 0;
+    }
+    .dot { 
+        font-size: 0.3em;
+    }
+    .buttons_slider i {
+        font-size: 0.5em;
+    }
+    .buttons_slider {
+        text-align: left;
+    }
+    #map_reservation {
+        margin-top: 20px;
+        flex-direction: column; 
+        flex-wrap: nowrap
+    }
+    .form {
+        margin-left: 0; 
+        margin-top: 0.5em;
+    }
+    .state_station {
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,394 @@
+/* CSS GENERAL */
+
+@font-face {
+    font-family: 'Indie';
+    src: url('../fonts/IndieFlower.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa.ttf') format('truetype');
+}
+
+html, body {
+    width: 100;
+    margin: 0;
+}
+
+body {
+    font-family: 'Comfortaa';
+    font-size: 2em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: silver;
+}
+
+a:visited {
+    color: silver;
+}
+
+input {
+    outline: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+#page {
+    width: 100%;
+    height: auto;
+    border: 0;
+    margin: 0
+}
+
+/********************* TOP-BAR *******************/
+#menu {
+    z-index: 2000;
+    background-color: white;
+    color: #5cadd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    box-shadow: 0px 5px 16px 4px rgba(119, 119, 119, 0.75);
+}
+
+.text_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.title_menu {
+    font-size: 1.5em;
+}
+
+.slogan_menu {
+    font-family: 'Indie';
+    font-size: 0.8em;
+}
+
+@keyframes reduce {
+    from {
+        height: 148.8px;
+    }
+    to {
+        height: 80px;
+    }
+}
+
+@keyframes reduce-reverse {
+    from {
+        height: 80px;
+    }
+    to {
+        height: 148.8px;
+    }
+}
+/****************************** SLIDER *********************/
+
+
+#slider {
+    margin-top: 180px;
+}
+
+.slides {
+    display: flex; 
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.one_slide figure {
+    display: flex;
+    flex-direction: column;
+    animation: opacity 3s;
+    position: relative;
+    margin: 0;
+}
+
+.one_slide figure img {
+    width: 100%;
+    margin: 0;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.one_slide figure figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 25px 0 0 25px ;  
+    position: absolute; 
+    color: white;
+    background-color: rgb(92, 173, 211, 0.9);
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin: 0;
+    left: 0;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
+}
+@keyframes opacity2 {
+    from {
+        opacity: 1;
+    }
+    to { 
+        opacity: 0;
+    }
+}
+
+.dots_slider {
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius:  15px 15px 0 0;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.dots_slider  li { 
+    color: silver; 
+    padding: 0.5em; 
+}
+
+.dots_slider li:hover, .dots_slider li:checked, .one_button:hover {
+    color: #5cadd3;
+}
+
+.dot {
+    font-size: 0.5em;
+}
+
+#slider .buttons_slider {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.blue {
+animation: colorblue 0.5s;
+}
+
+@keyframes colorblue {
+    from {
+        color: silver;
+    }
+    50% {
+        color: #5cadd3;
+    }
+    to {
+        color: silver;
+    }
+}
+
+/***************************** MAP ****************************/
+#map_reservation {
+    background-color: rgb(192, 192, 192, 0.5);
+    height: 400px;
+    padding: 1em;
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+#map { 
+    width: 100%;
+    height: 450px;
+    border: 3px solid #5cadd3;
+    border-radius: 25px;
+    padding: 1em;
+}
+
+@keyframes width-map {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 66%;
+    }
+}
+
+/****************************** FORMS INFOS & FORM RESERVATION **********************/
+
+.form {
+    font-size: 1em;
+    min-height: 450px;
+    border: 3px solid #5cadd3;
+    border-radius: 25px;
+    margin-left: 0.5em;
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slide 1s;
+}
+
+.form_infos {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+@keyframes slide {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.state_station {
+    min-width: 330px;
+    text-align: center;
+    font-size: 0.5em;
+    padding: 0.5em; 
+    background-color: #5cadd3;
+    color: white;
+    border-radius: 25px;
+}
+
+.station_name, .infos_station {
+    margin-top: 1em;
+    font-size: 0.5em;
+    width: 100%;
+    text-align: center;
+}
+
+.infos_station div {
+    font-weight: 600;
+}
+
+.infos_station i {
+    margin-top: 1em;
+    color: #5cadd3;
+}
+
+#reservation_button, #confirm_location {
+    border: none;
+    margin-top: 2em;
+    padding: 0.6em 2em 0.6em 2em; 
+    background-color: rgb(190, 1, 1,0.5);
+    color: white;
+    border-radius: 25px;
+}
+
+#reservation_button:hover, #confirm_location:hover, #cancel_reservation:hover  {
+    background-color: rgb(190,1,1);
+
+}
+
+.reservation_form {
+    display: none;
+    flex-direction: column;
+    font-size: 0.4em;
+    width: 100%;
+    padding: 1em;
+}
+
+canvas {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.canvas {
+    display: none;
+}
+
+#name, #last_name {
+    padding-left: 0.5em;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid silver;
+}
+
+label {
+    display: flex; 
+    flex-direction: column;
+}
+
+#sign {
+    margin: 0;
+    outline: none;
+}
+
+#clear_canvas {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 90px;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+#clear_canvas:hover {
+    background-color: silver;
+}
+
+
+/********************************* RÉSERVATION ***********************/
+
+#reservation {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    color: white; 
+    background-color: rgb(0,0,0,0.4);
+    position: fixed;
+    bottom:0;
+    left:0;
+    z-index: 2000;
+}
+
+.reservation_text {
+    margin: 0.5em;
+    font-size: 0.5em; 
+}
+
+#cancel_reservation {
+    font-size: 0.4em;
+    border-radius: 25px;
+    margin: 0.5em;
+    padding: 1em;
+    background-color: rgb(190, 1, 1,0.5);
+    color: white;
+    border: none;
+}
+
+.minutes_timer {
+    font-size: 0.8em;
+}
+
+/****************************** FOOTER *********************/
+footer {
+    width: 100%; 
+    height: auto;
+    font-size: 0.5em; 
+    padding: 0.5em;
+    background-color: rgb(192, 192, 192, 0.5);
+    color: #5cadd3;
+    text-align: center;
+
+}

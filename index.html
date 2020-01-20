@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <!-- HEADER WITH PRINCIPAL COMPONENTS AND SEO TAGS -->
+    <head>
+        <meta name="author" content="Florian THIEBAUD" />
+        <meta name="copyright" content="©2019 SaintéBike " />
+        <meta name="description" content="BIKE'L, faire du vélo n'aura jamais été aussi facile." />
+        <meta name="keywords" content="Bike'L,Bike,Lyon,Rhône,vélo,location" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="SaintéBike - Location de vélo" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="public/css/breakpoints.css"> 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>    
+        <link rel="shortcut icon" href="public/img/logo.ico" />
+        <title> BIKE'L - Location de vélos </title>
+    </head>
+
+    <body>
+        <div id="page" class="container-fluid no-padding">
+            <header id="menu" class="container-fluid fixed-top">
+                <img src="public/img/logo.png" alt="logo"/>
+                <div class="text_menu">
+                    <div class="title_menu">BIKE'L</div>
+                    <div class="slogan_menu">Le vélo en toute simplicité ...</div>
+            </div>
+            </header>
+
+            <section id="carousel" class="container-fluid no-padding">
+                <div id="slider">
+                    <div class="slides col-lg-12 col-xs-12 no-padding">
+                        <div class="one_slide">
+                            <figure><img src="public/img/slide11.png" alt="slide" class="slide" id="slide1"/>
+                                <figcaption class="col-lg-5 col-md-5">
+                                    <div class="text_slider"><h1>BIENVENUE</h1><p>Réservez votre vélo en seulement une petite minute.</p></div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="one_slide">
+                            <figure><img src="public/img/slide13.png" alt="slide" class="slide" id="slide1">
+                                <figcaption class="col-lg-5 col-md-5">
+                                    <div class="text_slider"><h1>ÉTAPE 1 :</h1><p>Choisissez une station sur la carte ci-dessous.</p></div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="one_slide">
+                            <figure><img src="public/img/slide14.png" alt="slide" class="slide" id="slide1">
+                                <figcaption class="col-lg-5 col-md-5">
+                                    <div class="text_slider"><h1>ÉTAPE 2 :</h1><p>Remplissez le formulaire de réservation et signez le.</p></div>
+                                </figcaption>
+                            </figure>
+                            </div>
+                        <div class="one_slide">
+                            <figure><img src="public/img/slide12.png" alt="slide" class="slide" id="slide1">
+                                <figcaption class="col-lg-5 col-md-5">
+                                    <div class="text_slider"><h1>ÉTAPE 3 :</h1><p>Votre réservation est bien prise en compte et expirera dans 20mn.</p></div>
+                                </figcaption>
+                            </figure>
+                        </div>
+        
+                        <ul class="dots_slider">
+                                <a href="#void" class="dote" id="first_dot"><li class="dot"><i class="far fa-circle"></i></li></a>
+                                <a href="#void" class="dote" id="second_dot"><li class="dot"><i class="far fa-circle"></i></li></a>
+                                <a href="#void" class="dote" id="third_dot"><li class="dot"><i class="far fa-circle"></i></li></a>
+                                <a href="#void" class="dote" id="last_dot"><li class="dot"><i class="far fa-circle"></i></li></a>
+                            </ul>     
+                    </div>
+                    <div class="buttons_slider">
+                        <a href="#void"><i id="prev" class="fas fa-chevron-circle-left one_button"></i></a>
+                        <a href="#void"><i id="playPause" class="fas fa-pause-circle one_button"></i></a>
+                        <a href="#void"><i id="next" class="fas fa-chevron-circle-right one_button"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section id="map_reservation" class="container-fluid">
+                <div class="row col-lg-12">
+                    <div id="map"></div>
+                </div>
+                <div class="form col-lg-4">
+                    <div class="form_infos">
+                        <div class="state_station"></div>
+                        <div class="station_name"></div>
+                        <div class="infos_station">
+                                <i class="fas fa-map-marker-alt"></i> ADRESSE : <div class="address"></div>
+                                <i class="fas fa-bicycle"></i> NOMBRE DE VÉLOS : <div class="total_bikes"></div>
+                                <i class="fas fa-bicycle"></i> VÉLOS DISPONIBLES : <div class="available_bikes"></div>
+                                <input type="button" id="reservation_button" value="RÉSERVER" />
+                        </div>
+                    </div>
+                    <form action="" class="reservation_form">
+                        <label> NOM : 
+                            <input type="text" id="name" required>
+                        </label>
+                        <label> PRÉNOM : 
+                            <input type="text" id="last_name" required>
+                        </label>
+                        <div class="canvas">
+                            <p id="sign">VOTRE SIGNATURE :</p>
+                            <canvas id="canvas"></canvas>
+                            <input type="button" id="clear_canvas" value="EFFACER" />
+                        </div>
+                        <input type="button" id="confirm_location" value="VALIDER">
+                    </form>
+                </div>
+            </section>
+            <section id="reservation"  class="container-fluid">
+                <div class="reservation_text"></div><span class="minutes_timer"></span>
+                    <input type="button" id="cancel_reservation" value="ANNULER">
+            </section>
+            <footer class="container-fluid">
+                © THIEBAUD FLORIAN - Site fictif réalisé dans le cadre de la formation DWJ OpenClassRooms
+            </footer>
+        </div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/map.js"></script>
+    <script src="public/js/canvas.js"></script>
+    <script src="public/js/localStorage.js"></script>
+    <script src="public/js/reservation.js"></script>
+
+    </html>
+
+
+    
