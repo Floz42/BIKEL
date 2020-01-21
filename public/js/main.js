@@ -2,11 +2,7 @@
 
 $(function(){
     
-   
-    const canvas = new Canvas(); 
-    const reservation = new Reservation();
     
- 
 // REDUCE OR INCREASE THE NAVBAR ON SCROLL
 
     $(window).on('scroll', function(){

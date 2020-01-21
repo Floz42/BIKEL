@@ -101,6 +101,8 @@ class Reservation {
         }
     }
 
+    const reservation = new Reservation();
+
 
 
 

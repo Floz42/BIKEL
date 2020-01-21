@@ -96,21 +96,28 @@
                         </div>
                     </div>
                     <form action="" class="reservation_form">
-                        <label> NOM : 
+                        <label> NOM* : 
                             <input type="text" id="name" required>
                         </label>
-                        <label> PRÉNOM : 
+                        <label> PRÉNOM* : 
                             <input type="text" id="last_name" required>
                         </label>
                         <div class="canvas">
-                            <p id="sign">VOTRE SIGNATURE :</p>
+                            <p id="sign">VOTRE SIGNATURE* :</p>
                             <canvas id="canvas"></canvas>
+                            <div id="message_canvas"></div>
                             <input type="button" id="clear_canvas" value="EFFACER" />
                         </div>
                         <input type="button" id="confirm_location" value="VALIDER">
                     </form>
                 </div>
             </section>
+            <div class="legend row col-lg-12 text-center">
+                <div><i class="red fas fa-circle"></i> Station fermée ou aucun vélo disponible</div>
+                <div><i class="orange fas fa-circle"></i> Moins de la moitié des vélos disponibles</div>
+                <div><i class="green fas fa-circle"></i> Vélos disponibles</div>
+                <div> * Champs obligatoires</div>
+            </div>
             <section id="reservation"  class="container-fluid">
                 <div class="reservation_text"></div><span class="minutes_timer"></span>
                     <input type="button" id="cancel_reservation" value="ANNULER">

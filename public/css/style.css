@@ -207,7 +207,7 @@ animation: colorblue 0.5s;
     display: flex; 
     justify-content: center;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.2em;
 }
 
 #map { 
@@ -345,6 +345,24 @@ label {
     background-color: silver;
 }
 
+.legend {
+    display: flex;
+    font-size: 0.5em;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: green;
+}
 
 /********************************* RÉSERVATION ***********************/
 
@@ -390,5 +408,5 @@ footer {
     background-color: rgb(192, 192, 192, 0.5);
     color: #5cadd3;
     text-align: center;
-
+    margin-top: 150px;
 }

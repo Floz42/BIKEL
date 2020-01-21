@@ -109,4 +109,7 @@
     .state_station {
         min-width: 100%;
     }
+    .legend {
+        flex-direction: column;
+    }
 }
