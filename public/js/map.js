@@ -83,9 +83,8 @@ class Map {
                     $('.form').css('display', 'flex');
                 } 
             } else {
-                $('.form').css({'display': 'initial'});
-                $('#map_reservation').css('margin-top', '300px');
-                $(document).scrollTop(1000);
+                $('.form').css({'display': 'flex'});
+                $(document).scrollTop(800);
             }
         }
         // call API and get stations informations to json format

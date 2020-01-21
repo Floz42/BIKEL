@@ -55,6 +55,9 @@ class Reservation {
                 $('#map_reservation .row').toggleClass('col-lg-12 col-lg-8');
                 $('.form').css('display', 'none');
             }  
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                $('.form').css('display', 'none');
+            }
                 $('.minutes_timer').css('display', 'flex');
                 $('#reservation').css({'display': 'flex'});
                 this.timer = true;
@@ -68,25 +71,24 @@ class Reservation {
         // function timer who start to 20mn and expire when he arrived    
         startTimer() {
             this.interval = setInterval(() => {
-            let minutes = localStorage.getItem('minutes_timer');
-            let seconds = localStorage.getItem('seconds_timer');
+            let minutes = sessionStorage.getItem('minutes_timer');
+            let seconds = sessionStorage.getItem('seconds_timer');
             seconds -= 1; 
             if (seconds < 0) {
                 seconds = 59;
                 minutes -= 1;
             } if ((minutes == 0) && (seconds <= 0)){
                 this.stopTimer();
-                sessionStorage.removeItem('stationName');
                 this.timer = false; 
                 $('.minutes_timer').hide();
                 $('.reservation_text').html("Votre réservation vient d'expirer.");
                 $('#cancel_reservation').hide();
                 setTimeout(function() { $('#reservation').hide()}, 3000);
-                localStorage.setItem('minutes_timer', 20);
-                localStorage.setItem('seconds_timer', 0);
+                sessionStorage.setItem('minutes_timer', 20);
+                sessionStorage.setItem('seconds_timer', 0);
             } else {
-                localStorage.setItem('minutes_timer', minutes);
-                localStorage.setItem('seconds_timer', seconds);
+                sessionStorage.setItem('minutes_timer', minutes);
+                sessionStorage.setItem('seconds_timer', seconds);
                 $('.minutes_timer').html(minutes + " mn et " + seconds + " s.");
                 } 
             }, 1000);
@@ -94,9 +96,7 @@ class Reservation {
 
         stopTimer() {
             clearInterval(this.interval);
-            sessionStorage.removeItem('stationName');
-            localStorage.setItem('minutes_timer', 20);
-            localStorage.setItem('seconds_timer', 0);
+            sessionStorage.clear();
             $('.minutes_timer').html(20 + " mn et " + 0 + " s.");
         }
     }
