@@ -7,7 +7,37 @@ class Reservation {
             this.interval;
             this.init();
             this.addEvents();
+            this.canvas_in();
+            this.location();
         }
+
+        // show canvas if inputs aren't empty
+        canvas_in() {
+            $('.reservation_form').keyup(() => {
+                let $name = $('#name');
+                let $last_name = $('#last_name');
+                if (($name.val() != "") && ($last_name.val() != "")) {
+                    $('.canvas').css({'display': 'initial', 'animation': 'opacity 1s' });
+                } else {
+                    $('.canvas').css({'display': 'none'});
+    
+                }
+            });
+        };
+    
+        // on click on reservation button, hide information and show reservation input
+        location() {
+            $('#reservation_button').on('click', function() {
+                const storage = new LocalStorage();
+                storage.getInfos();
+                $('#confirm_location').hide();
+                $('.form_infos').css({'animation': 'opacity 3s reverse', 'display': 'none'});
+                $('.reservation_form').css({'display': 'flex', 'animation': 'opacity 3s'});
+                if ((localStorage.getItem('name')) && ((localStorage.getItem('lastname')))) {
+                    $('.canvas').css({'display': 'initial', 'animation': 'opacity 1s' });
+                }
+                });
+        };
 
         // if a reservation is in progress, the user can't do another
         onCheckReservation(e) {
