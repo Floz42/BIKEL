@@ -58,6 +58,8 @@ class Map {
     location() {
         $('#reservation_button').on('click', function() {
             const canvas = new Canvas();
+            const storage = new LocalStorage();
+            storage.getInfos();
             $('#confirm_location').hide();
             $('.form_infos').css({'animation': 'opacity 3s reverse', 'display': 'none'});
             $('.reservation_form').css({'display': 'flex', 'animation': 'opacity 3s'});

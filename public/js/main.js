@@ -2,8 +2,7 @@
 
 $(function(){
     
-    storage = new LocalStorage();
-    storage.getInfos();
+   
     const canvas = new Canvas(); 
     const reservation = new Reservation();
     

@@ -10,8 +10,8 @@ class LocalStorage {
     };
 
     setInfos() {
-            localStorage.setItem('name', $('#name').val());
-            localStorage.setItem('lastname', $('#last_name').val());
+        localStorage.setItem('name', $('#name').val());
+        localStorage.setItem('lastname', $('#last_name').val());
     };
 };
 

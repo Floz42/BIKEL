@@ -41,9 +41,6 @@ class Reservation {
 
         // when user validate a reservation we call initReservation after verifications
         init() {
-            const storage = new LocalStorage();
-            storage.setInfos();
-            storage.getInfos();
             this.stationName = sessionStorage.stationName;
             if ((this.stationName == undefined) || (this.stationName == null)) {
                  $('#reservation').css('display', 'none');
@@ -58,12 +55,13 @@ class Reservation {
                 $('#map_reservation .row').toggleClass('col-lg-12 col-lg-8');
                 $('.form').css('display', 'none');
             }  
-                //this.stationName = $('.station_name').html();
                 $('.minutes_timer').css('display', 'flex');
                 $('#reservation').css({'display': 'flex'});
                 this.timer = true;
                 this.startTimer();
                 $('#cancel_reservation').show();
+                this.name = localStorage.getItem('name'); 
+                this.last_name = localStorage.getItem('lastname');
                 $('.reservation_text').html("Une réservation au nom de <span style='background-color: #5cadd3; padding: 0.3em;'>" + this.name + " " + this.last_name + "</span> a été prise pour la station <span style='background-color: #5cadd3; padding: 0.3em;'>" + this.stationName + "</span> et expirera dans : ");   
             }
 
