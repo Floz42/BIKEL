@@ -1,8 +1,5 @@
 class LocalStorage {
-    constructor() {
-        this.getInfos();
-        this.setInfos();
-    }
+
     
     // get informations in session storage to fulfill automatically input name and lastname to future reservations
     getInfos() {
@@ -13,10 +10,9 @@ class LocalStorage {
     };
 
     setInfos() {
-            this.name = localStorage.getItem('name');
-            this.last_name = localStorage.getItem('lastname');
             localStorage.setItem('name', $('#name').val());
             localStorage.setItem('lastname', $('#last_name').val());
     };
 };
 
+ 

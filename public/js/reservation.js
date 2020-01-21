@@ -41,6 +41,9 @@ class Reservation {
 
         // when user validate a reservation we call initReservation after verifications
         init() {
+            const storage = new LocalStorage();
+            storage.setInfos();
+            storage.getInfos();
             this.stationName = sessionStorage.stationName;
             if ((this.stationName == undefined) || (this.stationName == null)) {
                  $('#reservation').css('display', 'none');

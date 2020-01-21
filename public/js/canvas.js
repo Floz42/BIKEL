@@ -74,7 +74,6 @@ class Canvas {
         $('#confirm_location').click(() => {
             sessionStorage.stationName = $('.station_name').html()
             this.context.clearRect(0, 0, this.canvas_width, this.canvas_height);
-            const storage = new LocalStorage;
         })
     };
 };

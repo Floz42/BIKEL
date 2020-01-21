@@ -42,11 +42,14 @@ class Map {
 
     // show canvas if inputs aren't empty
     canvas_in() {
-        $('.reservation_form').keyup(function(){
+        $('.reservation_form').keyup(() => {
             let $name = $('#name');
             let $last_name = $('#last_name');
-            if (($name.val()) && ($last_name.val())) {
+            if (($name.val() != "") && ($last_name.val() != "")) {
                 $('.canvas').css({'display': 'initial', 'animation': 'opacity 1s' });
+            } else {
+                $('.canvas').css({'display': 'none'});
+
             }
         });
     };
