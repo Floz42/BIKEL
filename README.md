@@ -7,7 +7,8 @@ Vous devez afficher en haut de la page un diaporama de photos et de textes expli
 
 Le diaporama passe automatiquement à la diaporama suivante toutes les 5 secondes. L’utilisateur peut toutefois choisir de mettre le diaporama en pause. Il peut également reculer ou avancer manuellement à l’aide d’un clic de souris, ainsi qu’avec les touches gauche et droite de son clavier.
 
-Carte des vélos
+Carte des vélos :
+
 En-­dessous du diaporama se trouve une carte affichant en temps réel la liste des stations de location de vélos ainsi que leur disponibilité.  La localisation de toutes les stations de vélos est affichée à l’aide de marqueurs.
 
 La localisation et l'état de chaque station (ouverte, en travaux, combien de vélos et de places sont disponibles, etc.) est fourni via la plateforme OpenData de JC Decaux.
@@ -18,10 +19,10 @@ Un clic sur un marqueur affiche l’état de la station dans un panneau construi
 
 La carte doit être générée dynamiquement via un service de cartographie.
 
-Réservation d'un vélo
-Il doit être possible de réserver un vélo disponible à la station sélectionnée en :
+Réservation d'un vélo :
 
-indiquant son nom et son prénom,
+Il doit être possible de réserver un vélo disponible à la station sélectionnée en :
+ indiquant son nom et son prénom,
 signant dans un champ libre implémenté à l’aide de l’API HTML5 Canvas.
 Vous devez écrire vous même le code du Canvas. Aucun plugin n’est autorisé. Vous devez être capable d’expliquer votre code lors de la soutenance.
 
